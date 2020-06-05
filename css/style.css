@@ -1,0 +1,578 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "sans-serif";
+  background-color: #F4F4F4;
+}
+
+a:visited {
+  color: black;
+}
+
+.main-container {
+  /* Общая обертка body*/
+  margin: 0 auto;
+  max-width: 1120px;
+  min-width: 320px;
+}
+@media screen and (max-width: 1100px) {
+  .main-container {
+    max-width: 800px;
+  }
+}
+
+.underline {
+  background-color: black;
+  width: 40%;
+  height: 2px;
+  margin: 8px auto;
+  border: none;
+}
+
+/*Header section*/
+.header {
+  width: 100%;
+  padding: 70px 32px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1100px) {
+  .header {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header {
+    grid-template-columns: 1fr 11fr;
+    padding: 40px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    grid-template-columns: 1fr 5fr;
+    padding: 30px 0;
+  }
+}
+.header__hamburger {
+  display: none;
+}
+.header__hamburger .menu-bar-icon {
+  font-size: 23px;
+}
+@media screen and (max-width: 800px) {
+  .header__hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.header__logo {
+  width: 163px;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .header__menu {
+    display: none;
+  }
+}
+.header__menu .header__list {
+  display: flex;
+  align-items: center;
+}
+.header__menu .header__list li {
+  list-style: none;
+}
+.header__menu .header__link, .header__menu .header__link:visited {
+  margin: 0 7px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: black;
+}
+.header__menu .header__link:hover, .header__menu .header__link:visited:hover {
+  color: #4c665b;
+}
+.header__social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .header__social {
+    display: none;
+  }
+}
+.header__social .header__social-icon {
+  margin: 0 8px;
+}
+.header__social .header__social-icon:hover {
+  color: blue;
+}
+
+/*================Banner section===============*/
+.banner {
+  display: grid;
+  align-items: end;
+  padding: 32px;
+  grid-template-columns: 5fr 6fr;
+}
+@media screen and (max-width: 600px) {
+  .banner {
+    grid-template-columns: 1fr;
+  }
+}
+.banner__main {
+  display: flex;
+  align-items: flex-end;
+}
+.banner__main img {
+  width: 100%;
+  /*изображение в левой части баннера */
+}
+.banner__content {
+  padding-left: 30px;
+  display: grid;
+  grid-template-areas: "title ." "left right";
+}
+@media screen and (max-width: 600px) {
+  .banner__content {
+    padding-left: 0;
+    grid-template-areas: "title" " left" "right";
+    grid-gap: 8px 0;
+  }
+}
+.banner__content img {
+  width: 230px;
+}
+@media screen and (max-width: 1100px) {
+  .banner__content img {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .banner__content img {
+    width: 160px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .banner__content img {
+    width: 120px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .banner__content img {
+    width: 100%;
+  }
+}
+.banner__title {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  margin: 30px 0;
+  padding: 10px 0;
+  text-transform: uppercase;
+  grid-area: title;
+  font-size: 36px;
+  width: 280px;
+}
+@media screen and (max-width: 1100px) {
+  .banner__title {
+    font-size: 25px;
+    width: 200px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .banner__title {
+    font-size: 18px;
+    width: 180px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .banner__title {
+    font-size: 16px;
+    width: 180px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .banner__title {
+    margin-top: 30px;
+    width: 100%;
+  }
+}
+.banner__second {
+  grid-area: left;
+  width: 100%;
+  position: relative;
+}
+.banner__insta {
+  grid-area: right;
+  width: 100%;
+  position: relative;
+}
+.banner__text_bottom {
+  position: absolute;
+  left: 30px;
+  bottom: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@media screen and (max-width: 1100px) {
+  .banner__text_bottom {
+    left: 15px;
+    bottom: 15px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .banner__text_bottom {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .banner__text_bottom {
+    font-size: 28px;
+    left: 25px;
+    bottom: 20px;
+  }
+}
+
+/*================Subscribe section===============*/
+.subscribe {
+  margin: 32px;
+  padding: 10px 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #4c665b;
+}
+.subscribe__header {
+  font-size: 30px;
+  margin: 25px 0;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .subscribe__header {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .subscribe__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.subscribe__input {
+  height: 50px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+@media screen and (max-width: 600px) {
+  .subscribe__input {
+    height: 40px;
+  }
+}
+.subscribe__mail {
+  width: 240px;
+}
+@media screen and (max-width: 600px) {
+  .subscribe__mail {
+    width: 220px;
+  }
+}
+.subscribe__btn {
+  width: 170px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #ebefee;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .subscribe__btn {
+    font-size: 13px;
+    letter-spacing: normal;
+    padding: 10px 5px;
+    width: 40%;
+    margin-top: 20px;
+  }
+}
+
+/*================Intro section===============*/
+.intro {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+}
+@media screen and (max-width: 800px) {
+  .intro {
+    grid-template-columns: 3fr 7fr;
+  }
+}
+@media screen and (max-width: 700px) {
+  .intro {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .intro {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+}
+.intro__title {
+  text-transform: uppercase;
+  font-size: 32px;
+  margin: auto 0;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media screen and (max-width: 600px) {
+  .intro__title {
+    font-size: 24px;
+  }
+}
+.intro__content {
+  font-weight: lighter;
+  text-align: justify;
+  margin: auto;
+  font-size: 16px;
+}
+
+/*================Blog section===============*/
+.blog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 600px) {
+  .blog {
+    grid-template-columns: 1fr;
+  }
+}
+.blog .card {
+  padding: 24px;
+}
+.blog .card__image {
+  width: 100%;
+}
+.blog .card__figure {
+  /*для позиционирования надписи на фото*/
+  position: relative;
+}
+.blog .card__wrapper {
+  /*контейнер карточка с надписью на фото*/
+  position: absolute;
+  bottom: -45px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .blog .card__wrapper {
+    bottom: -40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .blog .card__wrapper {
+    bottom: -45px;
+  }
+}
+.blog .card__title {
+  width: 90%;
+  height: 100px;
+  margin: auto 15px;
+  background-color: rgba(236, 240, 239, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 800px) {
+  .blog .card__title {
+    height: 90px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .blog .card__title {
+    width: 80%;
+    height: 120px;
+    font-size: 24px;
+  }
+}
+.blog .card__body {
+  margin-top: 60px;
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  text-align: left;
+}
+@media screen and (max-width: 800px) {
+  .blog .card__body {
+    margin-top: 50px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .blog .card__body {
+    margin-top: 70px;
+    font-size: 16px;
+  }
+}
+
+/*================Instagram section===============*/
+#instagram {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 800px) {
+  #instagram {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  #instagram {
+    grid-template-columns: 1fr;
+  }
+}
+#instagram .instagram__item {
+  padding: 24px;
+}
+@media screen and (max-width: 600px) {
+  #instagram .instagram__item {
+    padding: 16px;
+  }
+}
+#instagram .instagram__img {
+  width: 100%;
+}
+#instagram .instagram__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 24px;
+}
+@media screen and (max-width: 600px) {
+  #instagram .instagram__desc {
+    padding: 8px;
+    font-size: 22px;
+  }
+}
+
+/*================Footer===============*/
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid #000;
+  padding: 40px;
+}
+.footer__logo {
+  width: 140px;
+  margin-bottom: 40px;
+}
+.footer__copyright {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
